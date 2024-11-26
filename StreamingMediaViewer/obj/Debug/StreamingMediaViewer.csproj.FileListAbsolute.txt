@@ -3,7 +3,6 @@ D:\2025_proj\StreamingMediaViewer\StreamingMediaViewer\bin\Debug\StreamingMediaV
 D:\2025_proj\StreamingMediaViewer\StreamingMediaViewer\bin\Debug\StreamingMediaViewer.pdb
 D:\2025_proj\StreamingMediaViewer\StreamingMediaViewer\bin\Debug\AxInterop.WMPLib.dll
 D:\2025_proj\StreamingMediaViewer\StreamingMediaViewer\bin\Debug\Interop.WMPLib.dll
-D:\2025_proj\StreamingMediaViewer\StreamingMediaViewer\obj\Debug\StreamingMediaViewer.csprojResolveAssemblyReference.cache
 D:\2025_proj\StreamingMediaViewer\StreamingMediaViewer\obj\Debug\StreamingMediaViewer.Properties.Resources.resources
 D:\2025_proj\StreamingMediaViewer\StreamingMediaViewer\obj\Debug\StreamingMediaViewer.StreamingMediaViewer.resources
 D:\2025_proj\StreamingMediaViewer\StreamingMediaViewer\obj\Debug\StreamingMediaViewer.csproj.GenerateResource.Cache

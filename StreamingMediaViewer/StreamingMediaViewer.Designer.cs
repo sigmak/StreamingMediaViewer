@@ -28,20 +28,61 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.dataGridViewMedia = new System.Windows.Forms.DataGridView();
+            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMedia)).BeginInit();
             this.SuspendLayout();
+            // 
+            // panel1
+            // 
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(945, 620);
+            this.panel1.TabIndex = 2;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.dataGridViewMedia);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel2.Location = new System.Drawing.Point(0, 440);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(945, 180);
+            this.panel2.TabIndex = 3;
+            // 
+            // dataGridViewMedia
+            // 
+            this.dataGridViewMedia.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewMedia.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridViewMedia.Location = new System.Drawing.Point(0, 0);
+            this.dataGridViewMedia.Name = "dataGridViewMedia";
+            this.dataGridViewMedia.RowTemplate.Height = 23;
+            this.dataGridViewMedia.Size = new System.Drawing.Size(945, 180);
+            this.dataGridViewMedia.TabIndex = 2;
             // 
             // StreamingMediaViewer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(945, 620);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panel1);
             this.Name = "StreamingMediaViewer";
             this.Text = "Form1";
+            this.Resize += new System.EventHandler(this.StreamingMediaViewer_Resize);
+            this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMedia)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
+
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.DataGridView dataGridViewMedia;
     }
 }
 
