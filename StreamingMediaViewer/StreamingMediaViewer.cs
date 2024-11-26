@@ -88,6 +88,8 @@ namespace StreamingMediaViewer
             dataGridViewMedia.MultiSelect = false;
             dataGridViewMedia.ReadOnly = true;
             dataGridViewMedia.CellDoubleClick += dataGridViewMedia_CellDoubleClick;
+
+            
         }
 
         private void LoadEncryptedFiles()
@@ -591,6 +593,47 @@ namespace StreamingMediaViewer
 
             }
         }
+
+        private async void dataGridViewMedia_KeyUp(object sender, KeyEventArgs e)
+        {
+            // 키가 Up 또는 Down인지 확인
+            if (e.KeyData == Keys.Up || e.KeyData == Keys.Down)
+            {
+                // Null 체크: CurrentRow와 Cells가 유효한지 확인
+                if (dataGridViewMedia.CurrentRow != null &&
+                    dataGridViewMedia.CurrentRow.Cells.Count > 0 &&
+                    dataGridViewMedia.CurrentRow.Cells[0].Value != null)
+                {
+                    string fileName = dataGridViewMedia.CurrentRow.Cells[0].Value.ToString();
+
+                    // Null 체크: encryptedFilesPath가 유효한지 확인
+                    if (!string.IsNullOrEmpty(encryptedFilesPath))
+                    {
+                        string fullPath = Path.Combine(encryptedFilesPath, fileName);
+
+                        try
+                        {
+                            // 파일 경로를 비동기적으로 처리
+                            await DisplayMediaAsync(fullPath);
+                        }
+                        catch (Exception ex)
+                        {
+                            // 오류 메시지 표시
+                            MessageBox.Show($"파일 열기 중 오류 발생: {ex.Message}", "오류", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("파일 경로가 올바르지 않습니다.", "경고", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("선택된 행이 없거나 유효하지 않습니다.", "경고", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+        }
+
     }
 
     // 스트리밍 프록시 서버 (비디오 스트리밍을 위한 간단한 HTTP 서버)

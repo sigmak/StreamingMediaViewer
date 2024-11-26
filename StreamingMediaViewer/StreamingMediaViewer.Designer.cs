@@ -61,6 +61,7 @@
             this.dataGridViewMedia.RowTemplate.Height = 23;
             this.dataGridViewMedia.Size = new System.Drawing.Size(945, 180);
             this.dataGridViewMedia.TabIndex = 2;
+            this.dataGridViewMedia.KeyUp += new System.Windows.Forms.KeyEventHandler(this.dataGridViewMedia_KeyUp);
             // 
             // StreamingMediaViewer
             // 
